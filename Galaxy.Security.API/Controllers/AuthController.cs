@@ -18,7 +18,7 @@ namespace Galaxy.Security.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody] CreateUserRequest request)
         {
-            var result = await _createUserUseCase.ExecuteAsync(request);
+            var result = await _createUserUseCase.ExecuteAsync(request );
             return Ok(BaseResponse<IdentityResponse>.Success(result));
         }
     }
