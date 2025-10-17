@@ -1,0 +1,28 @@
+services:
+    postgresql_security:
+        image: postgres:latest
+        container_name: security_db
+        environment:
+            POSTGRES_USER: admin
+            POSTGRES_PASSWORD: Password2025
+            POSTGRES_DB: security_db
+        ports:
+            - "1500:5432"
+        volumes:
+            - postgresql_security_data:/var/lib/postgresql/data
+
+    vault:
+        image: hashicorp/vault:1.17
+        ports:
+            - "8200:8200"
+        environment:
+            VAULT_DEV_ROOT_TOKEN_ID: "Ucyi1ziPEHQO4b"
+            VAULT_DEV_LISTEN_ADDRESS: "0.0.0.0:8200"
+        command: "server -dev -dev-listen-address=0.0.0.0:8200"
+        volumes:
+            - vault_data:/vault/file
+
+volumes:
+    postgresql_security_data:
+    vault_data:
+    

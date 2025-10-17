@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galaxy.Security.API", "Galaxy.Security.API\Galaxy.Security.API.csproj", "{E3996E27-78C6-4293-BEC9-70A85FBB5967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galaxy.Security.Application", "Galaxy.Security.Application\Galaxy.Security.Application.csproj", "{1C5E0513-3CE3-4DA3-BFCD-373383A0FFDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galaxy.Security.Domain", "Galaxy.Security.Domain\Galaxy.Security.Domain.csproj", "{7C110C57-775C-4CCB-93BB-3E689B05462E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galaxy.Security.Infraestructure", "Galaxy.Security.Infraestructure\Galaxy.Security.Infraestructure.csproj", "{B0516A3C-22FC-49FA-893C-46349E404E3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Core", "02. Core", "{66A0EB3D-7607-41A9-A380-AB59CC63E0AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Persistense", "03. Persistense", "{E4B8B020-874D-41DD-B3DD-CB6BABB71AD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Client", "05. Client", "{5AE4581B-2E7D-463C-9AAA-D82AFC4F8EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galaxy.Security.UI", "Galaxy.Security.UI\Galaxy.Security.UI.csproj", "{D618669F-A55E-4EDB-8CC8-D29A74774F84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{1B37934D-4510-4443-A52C-205B07E674C1}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B5BFB927-D377-46C3-ADC0-00EF0200295F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Shared", "04. Shared", "{7EF69F8D-2174-4761-BB2F-D014661D8C80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galaxy.Security.Shared", "Galaxy.Security.Shared\Galaxy.Security.Shared.csproj", "{1AE585F1-A53F-4B97-951B-76DBE8ADEFE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3996E27-78C6-4293-BEC9-70A85FBB5967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3996E27-78C6-4293-BEC9-70A85FBB5967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3996E27-78C6-4293-BEC9-70A85FBB5967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3996E27-78C6-4293-BEC9-70A85FBB5967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C5E0513-3CE3-4DA3-BFCD-373383A0FFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C5E0513-3CE3-4DA3-BFCD-373383A0FFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C5E0513-3CE3-4DA3-BFCD-373383A0FFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C5E0513-3CE3-4DA3-BFCD-373383A0FFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C110C57-775C-4CCB-93BB-3E689B05462E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C110C57-775C-4CCB-93BB-3E689B05462E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C110C57-775C-4CCB-93BB-3E689B05462E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C110C57-775C-4CCB-93BB-3E689B05462E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0516A3C-22FC-49FA-893C-46349E404E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0516A3C-22FC-49FA-893C-46349E404E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0516A3C-22FC-49FA-893C-46349E404E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0516A3C-22FC-49FA-893C-46349E404E3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D618669F-A55E-4EDB-8CC8-D29A74774F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D618669F-A55E-4EDB-8CC8-D29A74774F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D618669F-A55E-4EDB-8CC8-D29A74774F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D618669F-A55E-4EDB-8CC8-D29A74774F84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE585F1-A53F-4B97-951B-76DBE8ADEFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE585F1-A53F-4B97-951B-76DBE8ADEFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE585F1-A53F-4B97-951B-76DBE8ADEFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE585F1-A53F-4B97-951B-76DBE8ADEFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3996E27-78C6-4293-BEC9-70A85FBB5967} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1C5E0513-3CE3-4DA3-BFCD-373383A0FFDA} = {66A0EB3D-7607-41A9-A380-AB59CC63E0AB}
+		{7C110C57-775C-4CCB-93BB-3E689B05462E} = {66A0EB3D-7607-41A9-A380-AB59CC63E0AB}
+		{B0516A3C-22FC-49FA-893C-46349E404E3E} = {E4B8B020-874D-41DD-B3DD-CB6BABB71AD4}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {B5BFB927-D377-46C3-ADC0-00EF0200295F}
+		{66A0EB3D-7607-41A9-A380-AB59CC63E0AB} = {B5BFB927-D377-46C3-ADC0-00EF0200295F}
+		{E4B8B020-874D-41DD-B3DD-CB6BABB71AD4} = {B5BFB927-D377-46C3-ADC0-00EF0200295F}
+		{5AE4581B-2E7D-463C-9AAA-D82AFC4F8EFA} = {B5BFB927-D377-46C3-ADC0-00EF0200295F}
+		{D618669F-A55E-4EDB-8CC8-D29A74774F84} = {5AE4581B-2E7D-463C-9AAA-D82AFC4F8EFA}
+		{7EF69F8D-2174-4761-BB2F-D014661D8C80} = {B5BFB927-D377-46C3-ADC0-00EF0200295F}
+		{1AE585F1-A53F-4B97-951B-76DBE8ADEFE6} = {7EF69F8D-2174-4761-BB2F-D014661D8C80}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {497CF720-AD80-483E-AED9-9BA25DAD8312}
+	EndGlobalSection
+EndGlobal
