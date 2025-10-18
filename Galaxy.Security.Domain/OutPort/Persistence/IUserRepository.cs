@@ -11,5 +11,7 @@ namespace Galaxy.Security.Domain.OutPort.Persistence
     public interface IUserRepository
     {
         Task<OperationResult> CreateUserAsync(User user);
+        Task<User?> GetUserByUserNameAsync(string userName);
+        Task<bool> CheckPasswordAsync(User user, string password);
     }
 }

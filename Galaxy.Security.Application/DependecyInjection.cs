@@ -9,7 +9,7 @@ namespace Galaxy.Security.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<ICreateUserUseCase, CreateUserUseCase>();
-            //services.AddScoped<ILoginUseCase, LoginUseCase>();
+            services.AddScoped<ILoginUseCase, LoginUseCase>();
             //services.AddScoped<IRefreshTokenUseCase, RefreshTokenUseCase>();
             //services.AddScoped<IRemoveCookiesUseCase, RemoveCookiesUseCase>();
             return services;

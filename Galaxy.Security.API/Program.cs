@@ -2,6 +2,7 @@ using Galaxy.Security.Infraestructure;
 using Galaxy.Security.Application;
 using Galaxy.Security.Infraestructure.Configurations.IdentitySeed;
 using Galaxy.Security.API.Middlewares;
+using Galaxy.Security.Infraestructure.Configurations.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddApplication();
 builder.Services.AddInfraestructure(builder.Configuration);
+builder.Services.AddJwtWithCookies(builder.Configuration);
 
 var app = builder.Build();
 
@@ -23,6 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseExceptionHandlingMiddleware();
 app.UseHttpsRedirection();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

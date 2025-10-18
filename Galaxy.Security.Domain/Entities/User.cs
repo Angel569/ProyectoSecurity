@@ -24,6 +24,8 @@ namespace Galaxy.Security.Domain.Entities
         public bool EmailConfirmed { get; private set; }
 
         //Security Properties
+        public string PasswordHash { get; private set; }
+
         public string Password { get; private set; }
 
         //Contact Properties
@@ -35,6 +37,10 @@ namespace Galaxy.Security.Domain.Entities
         public bool LockoutEnabled { get; private set; }
         public int AccessFailedCount { get; private set; }
 
+        public User()
+        {
+            //Constructor para EF
+        }
         public User(Guid userId, string fullName, string userName, string email, string password)
         {
             UserId = userId == Guid.Empty ? Guid.NewGuid() : userId;

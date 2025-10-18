@@ -22,5 +22,17 @@ namespace Galaxy.Security.Infraestructure.Adapters.Persistence
             return result.Succeeded ? OperationResult.Ok() 
                 : OperationResult.Fail(result.Errors.Select(e => e.Description));
         }
+
+        public async Task<User?> GetUserByUserNameAsync(string userName)
+        {
+            var result = await _userManager.FindByNameAsync(userName);
+            return result.Adapt<User>();
+        }
+        public async Task<bool> CheckPasswordAsync(User user, string password)
+        {
+            var userExtension = user.Adapt<UserExtension>();
+            var result = await _userManager.CheckPasswordAsync(userExtension, password);
+            return result;
+        }
     }
 }

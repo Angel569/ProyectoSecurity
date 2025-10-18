@@ -10,16 +10,24 @@ namespace Galaxy.Security.API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly ICreateUserUseCase _createUserUseCase;
-        public AuthController(ICreateUserUseCase createUserUseCase)
+        private readonly ILoginUseCase _loginUseCase;
+        public AuthController(ICreateUserUseCase createUserUseCase, ILoginUseCase loginUseCase)
         {
             _createUserUseCase = createUserUseCase;
+            _loginUseCase = loginUseCase;
         }
 
-        [HttpPost]
+        [HttpPost("CreateUser")]
         public async Task<IActionResult> Register([FromBody] CreateUserRequest request)
         {
             var result = await _createUserUseCase.ExecuteAsync(request);
             return Ok(BaseResponse<IdentityResponse>.Success(result));
+        }
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            var result = await _loginUseCase.ExecuteAsync(request);
+            return Ok(BaseResponse<string>.Success(result));
         }
     }
 }

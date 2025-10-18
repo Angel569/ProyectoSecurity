@@ -1,6 +1,8 @@
 ﻿using Galaxy.Security.Domain.OutPort.Persistence;
 using Galaxy.Security.Domain.OutPort.Secrets;
+using Galaxy.Security.Domain.OutPort.Services;
 using Galaxy.Security.Infraestructure.Adapters.Persistence;
+using Galaxy.Security.Infraestructure.Adapters.Services;
 using Galaxy.Security.Infraestructure.Configurations.Context;
 using Galaxy.Security.Infraestructure.Configurations.IdentityEntities;
 using Galaxy.Security.Infraestructure.Configurations.Secrets;
@@ -48,6 +50,7 @@ namespace Galaxy.Security.Infraestructure
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAuthService, AuthService>();
             return services;
         }
     }
