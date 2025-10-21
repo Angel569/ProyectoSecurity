@@ -1,0 +1,14 @@
+﻿@page "/login"
+<EditForm Model="UserModel" OnValidSubmit="OnLogin">
+    <input type="text" class="input-field" placeholder="Ingrese Usuario" @bind="UserModel.UserName"/>
+    <input type="password" class="input-field" placeholder="Ingrese Contraseña" @bind="UserModel.Password"/>
+    <button type="submit" class="btn-submit">
+        <i class="bi bi-box-arrow-in-right"></i>
+        Iniciar Sesión
+    </button>
+    <button type="button" class="btn-portal">
+        <i class="bi bi-person-circle"></i>
+        Registrar Usuario
+    </button>
+</EditForm>
+

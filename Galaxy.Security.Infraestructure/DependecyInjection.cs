@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
 
 namespace Galaxy.Security.Infraestructure
 {
@@ -31,7 +32,11 @@ namespace Galaxy.Security.Infraestructure
                 var cs = secrets["SecurityDb"];
                 options.UseNpgsql(cs);
             });
-
+            services.AddSingleton<IConnectionMultiplexer>(sp =>
+            {
+                var redisConnection = secrets["RedisConnection"];
+                return ConnectionMultiplexer.Connect(redisConnection);
+            });
             //ASPNET Core Identity Injection
             services.AddIdentity<UserExtension, IdentityRole>(policy =>
             {
@@ -51,6 +56,7 @@ namespace Galaxy.Security.Infraestructure
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IRefreshTokenStore, RefreshTokenStore>();
             return services;
         }
     }

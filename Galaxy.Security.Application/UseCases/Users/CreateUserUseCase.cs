@@ -17,12 +17,13 @@ namespace Galaxy.Security.Application.UseCases.Users
         public async Task<IdentityResponse> ExecuteAsync(CreateUserRequest request)
         {
             var user = User.Create(new Guid(), request.FullName, request.UserName, request.Email, request.Password);
-            var result = await _userRepository.CreateUserAsync(user);
+            var result = await _userRepository.CreateUserAsync(user, request.Role);
 
             if (!result.Success)
             {
                throw new ApplicationException(string.Join(", ", result.Errors));
             }
+            
             return new IdentityResponse
             {
                 Success = result.Success,

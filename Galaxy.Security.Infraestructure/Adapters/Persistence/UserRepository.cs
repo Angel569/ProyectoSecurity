@@ -16,12 +16,17 @@ namespace Galaxy.Security.Infraestructure.Adapters.Persistence
             _userManager = userManager;
         }
 
-        public async Task<OperationResult> CreateUserAsync(User user)
+        public async Task<OperationResult> CreateUserAsync(User user, string rol)
         {
-            var result = await _userManager.CreateAsync(user.Adapt<UserExtension>(), user.Password);
+            var userExtension = user.Adapt<UserExtension>();
+            var result = await _userManager.CreateAsync(userExtension, user.Password);
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(userExtension, rol);
+            }
             return result.Succeeded ? OperationResult.Ok() 
                 : OperationResult.Fail(result.Errors.Select(e => e.Description));
-        }
+        }    
 
         public async Task<User?> GetUserByUserNameAsync(string userName)
         {

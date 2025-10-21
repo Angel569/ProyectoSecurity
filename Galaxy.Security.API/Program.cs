@@ -15,7 +15,16 @@ builder.Services.AddOpenApi();
 builder.Services.AddApplication();
 builder.Services.AddInfraestructure(builder.Configuration);
 builder.Services.AddJwtWithCookies(builder.Configuration);
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazor",policy =>
+    {
+        policy.WithOrigins("https://localhost:7178")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); //COOKIES
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,11 +34,14 @@ if (app.Environment.IsDevelopment())
 }
 app.UseExceptionHandlingMiddleware();
 app.UseHttpsRedirection();
+app.UseCors("AllowBlazor");
 app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+
 
 // Seeder
 using (var scope = app.Services.CreateScope())

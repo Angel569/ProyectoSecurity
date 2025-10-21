@@ -17,12 +17,10 @@ namespace Galaxy.Security.Infraestructure.Configurations.Auth
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
 
-            //var sp = services.BuildServiceProvider();
-            //var secretProvider = sp.GetRequiredService<IVaultSecretsProvider>();
-            //var secrets = secretProvider.GetSecretsAsync().GetAwaiter().GetResult(); // sincronizar
-            //var secretKey = secrets["JwtSecretKey"];
-
-            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!));
+            var sp = services.BuildServiceProvider();
+            var secretProvider = sp.GetRequiredService<IVaultSecretsProvider>();
+            var secrets = secretProvider.GetSecretsAsync().GetAwaiter().GetResult(); 
+            var secretKey = secrets["JwtSecretKey"];
 
             services.AddAuthentication(options =>
             {
@@ -39,7 +37,7 @@ namespace Galaxy.Security.Infraestructure.Configurations.Auth
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = jwtSettings["Issuer"],
                         ValidAudience = jwtSettings["Audience"],
-                        IssuerSigningKey = secretKey
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                     };
 
                     options.Events = new JwtBearerEvents

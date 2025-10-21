@@ -10,8 +10,8 @@ namespace Galaxy.Security.Application
         {
             services.AddScoped<ICreateUserUseCase, CreateUserUseCase>();
             services.AddScoped<ILoginUseCase, LoginUseCase>();
-            //services.AddScoped<IRefreshTokenUseCase, RefreshTokenUseCase>();
-            //services.AddScoped<IRemoveCookiesUseCase, RemoveCookiesUseCase>();
+            services.AddScoped<IRefreshTokenUseCase, RefreshTokenUseCase>();
+            services.AddScoped<IRemoveCookiesUseCase, RemoveCookiesUseCase>();
             return services;
         }
     }

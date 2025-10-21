@@ -21,8 +21,19 @@ services:
         command: "server -dev -dev-listen-address=0.0.0.0:8200"
         volumes:
             - vault_data:/vault/file
+    
+    redis:
+        image: redis:7.4-alpine
+        container_name: redis_auth
+        restart: always
+        ports:
+            - "6379:6379"
+        volumes:
+            - redis_data:/data
+        command: ["redis-server", "--appendonly", "yes"]
 
 volumes:
     postgresql_security_data:
     vault_data:
+    redis_data:
     
