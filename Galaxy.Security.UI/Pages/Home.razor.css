@@ -1,41 +1,117 @@
-﻿﻿.button-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 500px;
+﻿.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.btn {
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+.welcome-section {
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
+    margin-bottom: 3rem;
 }
 
-    .btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+.welcome-section h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card.registro {
+    border-top-color: #667eea;
+}
+
+.card.consulta {
+    border-top-color: #f5576c;
+}
+
+.card.salir {
+    border-top-color: #4facfe;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card.registro .card-icon {
+    color: #667eea;
+}
+
+.card.consulta .card-icon {
+    color: #f5576c;
+}
+
+.card.salir .card-icon {
+    color: #4facfe;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        padding: 1.5rem;
     }
 
-    .btn i {
-        font-size: 36px;
-        margin-bottom: 10px;
-        color: #ff9800;
+    .welcome-section h1 {
+        font-size: 2rem;
     }
 
-    .btn span {
-        display: block;
-        font-size: 16px;
-        color: #333;
+    .cards-grid {
+        gap: 1.5rem;
     }
 
-@media (max-width: 600px) {
-    .button-container {
-        grid-template-columns: 1fr;
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
     }
 }

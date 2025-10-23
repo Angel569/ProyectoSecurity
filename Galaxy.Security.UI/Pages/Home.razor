@@ -1,7 +1,7 @@
 ﻿@page "/"
 @using Galaxy.Security.UI.Services
 @using Microsoft.AspNetCore.Components.Authorization
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Supervisor,Customer")]
 @inject HttpClient http
 @inject AuthenticationStateProvider Auth
 @inject NavigationManager Navegador
@@ -9,37 +9,49 @@
 <PageTitle>Home</PageTitle>
 
 
-<div class="button-container">
-    <div class="btn" @onclick="GoToRegistroUsuario">
-        <i class="bi bi-clipboard-check"></i>
-        <span>Registrar Usuario</span>
+<PageTitle>Home</PageTitle>
+
+<div class="home-container">
+    <div class="welcome-section">
+        <h1>Sistema de Reclamos</h1>
+        <p>Gestiona y consulta reclamos</p>
     </div>
-    <div class="btn">
-        <i class="bi bi-clipboard2-pulse-fill"></i>
-        <span>Menu 1</span>
-    </div>
-    <div class="btn">
-        <i class="bi bi-bicycle"></i>
-        <span>Menu 1</span>
-    </div>
-    <div class="btn">
-        <i class="bi bi-heart-pulse"></i>
-        <span>Menu 1</span>
-    </div>
-    <div class="btn">
-        <i class="bi bi-person-raised-hand"></i>
-        <span>Menu 1</span>
-    </div>
-    <div class="btn" @onclick="CerrarSesion">
-        <i class="bi bi-door-open"></i>
-        <span>Cerrar Sesión</span>
+
+    <div class="cards-grid">
+        <div class="card registro" @onclick="RegistroReclamo">
+            <div class="card-icon">
+                <i class="bi bi-clipboard-check"></i>
+            </div>
+            <h3>Nuevo Reclamo</h3>
+            <p>Registra un nuevo reclamo en el sistema</p>
+        </div>
+
+        <div class="card consulta" @onclick="ConsultaReclamos">
+            <div class="card-icon">
+                <i class="bi bi-clipboard2-pulse-fill"></i>
+            </div>
+            <h3>Consultar</h3>
+            <p>Revisa el estado de tus reclamos</p>
+        </div>
+
+        <div class="card salir" @onclick="CerrarSesion">
+            <div class="card-icon">
+                <i class="bi bi-door-open"></i>
+            </div>
+            <h3>Cerrar Sesión</h3>
+        </div>
     </div>
 </div>
 
 @code {
-    public void GoToRegistroUsuario()
+    private void RegistroReclamo()
     {
-        Navegador.NavigateTo("/usuario/nuevo");
+        Navegador.NavigateTo("/reclamo/nuevo");
+    }
+
+    private void ConsultaReclamos()
+    {
+        Navegador.NavigateTo("/reclamo/consulta");
     }
 
     public async Task CerrarSesion()

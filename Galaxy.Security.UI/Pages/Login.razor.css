@@ -1,5 +1,4 @@
-﻿/* Form */
-.login-form {
+﻿.login-form {
     padding: 35px 30px;
 }
 
@@ -22,7 +21,6 @@
     font-size: 1.1rem;
 }
 
-/* Input Fields */
 .input-field {
     width: 100%;
     padding: 14px 16px;
@@ -43,7 +41,6 @@
     color: #999;
 }
 
-/* Validation */
 .validation-message {
     color: #e74c3c;
     font-size: 0.85rem;
@@ -51,7 +48,6 @@
     display: block;
 }
 
-/* Buttons */
 .form-buttons {
     display: flex;
     flex-direction: column;
@@ -75,14 +71,14 @@
 }
 
 .btn-submit {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
 }
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
 .btn-submit:active {
@@ -91,12 +87,12 @@
 
 .btn-register {
     background: white;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: #10b981;
+    border: 2px solid #10b981;
 }
 
 .btn-register:hover {
-    background: #667eea;
+    background: #10b981;
     color: white;
     transform: translateY(-2px);
 }
@@ -106,7 +102,6 @@
     font-size: 1.2rem;
 }
 
-/* Divider */
 .divider {
     display: flex;
     align-items: center;
@@ -127,7 +122,6 @@
     font-size: 0.9rem;
 }
 
-/* Footer */
 .login-footer {
     background: #f8f9fa;
     padding: 20px 30px;
