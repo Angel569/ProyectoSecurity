@@ -10,9 +10,9 @@
 
 
 <div class="button-container">
-    <div class="btn">
+    <div class="btn" @onclick="GoToRegistroUsuario">
         <i class="bi bi-clipboard-check"></i>
-        <span>Menu 1</span>
+        <span>Registrar Usuario</span>
     </div>
     <div class="btn">
         <i class="bi bi-clipboard2-pulse-fill"></i>
@@ -37,6 +37,10 @@
 </div>
 
 @code {
+    public void GoToRegistroUsuario()
+    {
+        Navegador.NavigateTo("/usuario/nuevo");
+    }
 
     public async Task CerrarSesion()
     {

@@ -13,7 +13,7 @@ namespace Galaxy.Security.Application.UseCases.Users
         public async Task<string> ExecuteAsync()
         {
             var result = await _authService.RefreshTokensAsync();
-            return "Token refrescado correctamente";
+            return result.AccessToken;
         }
     }
 }

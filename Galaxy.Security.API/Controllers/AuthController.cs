@@ -45,8 +45,8 @@ namespace Galaxy.Security.API.Controllers
         [HttpPost("Refresh")]
         public async Task<IActionResult> Refresh()
         {
-            var result = await _refreshTokenUseCase.ExecuteAsync();
-            return Ok(BaseResponse<string>.Success(result));
+            await _refreshTokenUseCase.ExecuteAsync();
+            return Ok(BaseResponse<string>.Success("Token refrescado"));
         }
         [HttpGet("Me")]
         [Authorize]

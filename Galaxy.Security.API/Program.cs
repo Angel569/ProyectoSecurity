@@ -35,6 +35,7 @@ if (app.Environment.IsDevelopment())
 app.UseExceptionHandlingMiddleware();
 app.UseHttpsRedirection();
 app.UseCors("AllowBlazor");
+app.UseRefreshTokenMiddleware();
 app.UseAuthentication();
 
 app.UseAuthorization();
